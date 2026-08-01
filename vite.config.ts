@@ -1,4 +1,4 @@
-import { preview } from '@vitest/browser-preview'
+import { playwright } from '@vitest/browser-playwright'
 import { defineConfig, type UserConfig } from 'vite-plus'
 
 const config: UserConfig = defineConfig({
@@ -43,8 +43,9 @@ const config: UserConfig = defineConfig({
   },
   test: {
     browser: {
-      provider: preview(),
+      provider: playwright(),
       enabled: true,
+      headless: true,
       instances: [{ browser: 'chromium' }],
     },
   },
