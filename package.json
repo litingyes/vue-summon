@@ -43,7 +43,7 @@
     "vue-component-type-helpers": "^3.3.8"
   },
   "devDependencies": {
-    "@types/node": "^26.1.2",
+    "@types/node": "^24.13.3",
     "@vitest/browser-preview": "^4.1.10",
     "bumpp": "^12.1.1",
     "changelogen": "^0.6.2",
