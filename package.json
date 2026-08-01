@@ -59,8 +59,9 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.13.0",
+      "version": "11.18.0",
       "onFail": "warn"
     }
-  }
+  },
+  "packageManager": "pnpm@11.18.0"
 }
