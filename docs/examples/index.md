@@ -45,3 +45,15 @@ Summoning twice with the same `key` returns the same controller — only one ins
 <<< @/.vitepress/theme/components/DemoKey.vue
 <<< @/.vitepress/theme/components/KeyDialog.vue
 :::
+
+## Transition
+
+Set a default transition for every summoned instance on the host, or pass a full `TransitionProps` object:
+
+```vue
+<template>
+  <SummonHost transition="fade" />
+  <!-- or -->
+  <SummonHost :transition="{ name: 'zoom', mode: 'out-in' }" />
+</template>
+```

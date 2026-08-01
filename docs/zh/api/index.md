@@ -63,9 +63,10 @@ async function onDelete() {
 
 渲染某个管理器下的所有实例，teleport 到 `<body>`，每个实例包裹 `<Transition>`。
 
-| Prop      | 类型            | 默认值           | 说明             |
-| --------- | --------------- | ---------------- | ---------------- |
-| `manager` | `SummonManager` | `defaultManager` | 渲染哪个注册表。 |
+| Prop         | 类型                        | 默认值           | 说明                                                                       |
+| ------------ | --------------------------- | ---------------- | -------------------------------------------------------------------------- |
+| `manager`    | `SummonManager`             | `defaultManager` | 渲染哪个注册表。                                                           |
+| `transition` | `string \| TransitionProps` | `undefined`      | 所有实例的默认过渡动画。字符串会设置 `name`；对象会透传给 `<Transition>`。 |
 
 每个管理器挂载一次，通常在 `App.vue` 中。
 

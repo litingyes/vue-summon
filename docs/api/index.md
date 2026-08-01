@@ -63,9 +63,10 @@ It must be called inside an active effect scope to enable automatic cleanup. Out
 
 Renders all instances of a manager, teleported to `<body>`, each wrapped in a `<Transition>`.
 
-| Prop      | Type            | Default          | Description               |
-| --------- | --------------- | ---------------- | ------------------------- |
-| `manager` | `SummonManager` | `defaultManager` | Which registry to render. |
+| Prop         | Type                        | Default          | Description                                                                                          |
+| ------------ | --------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------- |
+| `manager`    | `SummonManager`             | `defaultManager` | Which registry to render.                                                                            |
+| `transition` | `string \| TransitionProps` | `undefined`      | Default transition for all instances. A string sets `name`; an object is spread onto `<Transition>`. |
 
 Mount once per manager, typically in `App.vue`.
 

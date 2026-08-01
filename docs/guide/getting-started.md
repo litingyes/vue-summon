@@ -35,7 +35,14 @@ import { SummonHost } from 'vue-summon'
 </template>
 ```
 
-The host teleports instances to `<body>` and wraps each one in a `<Transition>` for enter/leave animations.
+The host teleports instances to `<body>` and wraps each one in a `<Transition>` for enter/leave animations. Customize the transition with the `transition` prop:
+
+```vue
+<SummonHost transition="fade" />
+
+<!-- or pass a full Transition props object -->
+<SummonHost :transition="{ name: 'zoom', mode: 'out-in' }" />
+```
 
 ## 2. Build a summoneable component
 

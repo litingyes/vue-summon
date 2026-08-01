@@ -1,5 +1,5 @@
 import { Teleport, Transition, defineComponent, h, provide } from 'vue'
-import type { DefineComponent, PropType } from 'vue'
+import type { DefineComponent, PropType, TransitionProps } from 'vue'
 
 import { summonContextKey } from './context'
 import { defaultManager, type SummonInstance, type SummonManager } from './manager'
@@ -47,6 +47,7 @@ const InstanceWrapper = defineComponent({
 
 export interface SummonHostProps {
   manager?: SummonManager
+  transition?: string | TransitionProps
 }
 
 export const SummonHost: DefineComponent<SummonHostProps> = defineComponent({
@@ -56,9 +57,46 @@ export const SummonHost: DefineComponent<SummonHostProps> = defineComponent({
       required: false,
       default: () => defaultManager,
     },
+    transition: {
+      type: [String, Object] as PropType<string | TransitionProps>,
+      required: false,
+    },
   },
   setup(props) {
     const manager = props.manager as SummonManager
+
+    function buildTransitionProps(instance: SummonInstance): TransitionProps {
+      if (!props.transition) {
+        return {
+          /* v8 ignore next */
+          onAfterLeave: () => manager.remove(instance.id),
+        }
+      }
+
+      if (typeof props.transition === 'string') {
+        return {
+          name: props.transition,
+          /* v8 ignore next */
+          onAfterLeave: () => manager.remove(instance.id),
+        }
+      }
+
+      const userOnAfterLeave = props.transition.onAfterLeave
+      return {
+        ...props.transition,
+        /* v8 ignore start */
+        onAfterLeave: (el: Element): void => {
+          if (Array.isArray(userOnAfterLeave)) {
+            userOnAfterLeave.forEach((hook) => hook(el))
+          } else {
+            userOnAfterLeave?.(el)
+          }
+          manager.remove(instance.id)
+        },
+        /* v8 ignore stop */
+      }
+    }
+
     return () =>
       h(
         Teleport,
@@ -68,10 +106,7 @@ export const SummonHost: DefineComponent<SummonHostProps> = defineComponent({
             Transition,
             {
               key: instance.id,
-              // 该 hook 依赖浏览器 CSS 过渡事件，在 headless 测试环境中无法稳定触发，
-              // 其内部仅调用 manager.remove，已在其它用例中覆盖。
-              /* v8 ignore next */
-              onAfterLeave: () => manager.remove(instance.id),
+              ...buildTransitionProps(instance),
             },
             () => (instance.visible.value ? h(InstanceWrapper, { instance }) : null),
           ),

@@ -35,7 +35,14 @@ import { SummonHost } from 'vue-summon'
 </template>
 ```
 
-宿主会把实例 teleport 到 `<body>`，并为每个实例包裹 `<Transition>` 以实现进出场动画。
+宿主会把实例 teleport 到 `<body>`，并为每个实例包裹 `<Transition>` 以实现进出场动画。你可以通过 `transition` prop 定制过渡动画：
+
+```vue
+<SummonHost transition="fade" />
+
+<!-- 也可以透传完整的 Transition props 对象 -->
+<SummonHost :transition="{ name: 'zoom', mode: 'out-in' }" />
+```
 
 ## 2. 编写可召唤的组件
 

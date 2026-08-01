@@ -45,3 +45,15 @@ Promise 同时也是控制器：任务运行中随时修补 props，完成后 re
 <<< @/.vitepress/theme/components/DemoKey.vue
 <<< @/.vitepress/theme/components/KeyDialog.vue
 :::
+
+## 过渡动画
+
+在宿主上为所有实例设置默认过渡动画，或透传完整的 `TransitionProps` 对象：
+
+```vue
+<template>
+  <SummonHost transition="fade" />
+  <!-- 或 -->
+  <SummonHost :transition="{ name: 'zoom', mode: 'out-in' }" />
+</template>
+```
