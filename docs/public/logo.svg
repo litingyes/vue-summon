@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="vs-grad" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#42b883"/>
+      <stop offset="1" stop-color="#0ea5a4"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="32" cy="50" rx="23" ry="7.5" stroke="url(#vs-grad)" stroke-width="3"/>
+  <ellipse cx="32" cy="50" rx="13.5" ry="4.2" stroke="url(#vs-grad)" stroke-width="1.6" stroke-dasharray="3.2 3.2" opacity="0.75"/>
+  <path d="M32 6a3 3 0 0 1 3 3v5h-6V9a3 3 0 0 1 3-3Z" fill="url(#vs-grad)" opacity="0.9"/>
+  <rect x="15" y="12" width="34" height="23" rx="7" fill="url(#vs-grad)"/>
+  <path d="M24.5 35 29 44l7.5-9H24.5Z" fill="url(#vs-grad)"/>
+  <rect x="21.5" y="19" width="21" height="3.2" rx="1.6" fill="#fff" opacity="0.95"/>
+  <rect x="21.5" y="25.5" width="13" height="3.2" rx="1.6" fill="#fff" opacity="0.7"/>
+  <path d="M9.5 15.5 11 20l4.5 1.5L11 23l-1.5 4.5L8 23l-4.5-1.5L8 20l1.5-4.5Z" fill="url(#vs-grad)"/>
+  <path d="M54.5 4 55.4 6.6 58 7.5l-2.6.9L54.5 11l-.9-2.6L51 7.5l2.6-.9L54.5 4Z" fill="url(#vs-grad)" opacity="0.85"/>
+</svg>

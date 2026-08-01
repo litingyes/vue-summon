@@ -7,6 +7,7 @@ const config: UserConfig = defineConfig({
       typeAware: true,
       typeCheck: true,
     },
+    ignorePatterns: ['docs/**'],
     plugins: [
       'eslint',
       'typescript',
