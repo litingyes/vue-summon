@@ -8,6 +8,8 @@
   </p>
 </div>
 
+**English** | [简体中文](./README.zh-CN.md)
+
 ## Features
 
 - **Imperative API** — call `summon(Component, props)` from event handlers, stores, routers — even outside component setup
