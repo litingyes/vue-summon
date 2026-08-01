@@ -1,0 +1,25 @@
+{
+  "name": "vue-summon",
+  "version": "0.0.0",
+  "description": "Imperatively render Vue components from anywhere — dialogs, toasts, modals, without cluttering your templates.",
+  "keywords": [],
+  "license": "MIT",
+  "author": "litingyes",
+  "type": "module",
+  "devDependencies": {
+    "bumpp": "^12.1.1",
+    "changelogen": "^0.6.2",
+    "typescript": "^7.0.2",
+    "vite-plus": "^0.2.6"
+  },
+  "peerDependencies": {
+    "vue": "3"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.13.0",
+      "onFail": "download"
+    }
+  }
+}
