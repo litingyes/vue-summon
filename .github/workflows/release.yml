@@ -1,0 +1,71 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Publish npm package and create GitHub Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          registry-url: 'https://registry.npmjs.org'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run checks
+        run: pnpm check
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Build package
+        run: pnpm build
+
+      - name: Extract release notes
+        id: notes
+        shell: bash
+        run: |
+          VERSION_TAG="${GITHUB_REF_NAME}"
+          VERSION_NO_V="${GITHUB_REF_NAME#v}"
+          {
+            echo 'body<<RELEASE_NOTES_EOF'
+            awk -v tag="$VERSION_TAG" -v tag_no_v="$VERSION_NO_V" '
+              /^## / {
+                if (found) exit
+                if ($2 == tag || $2 == tag_no_v) found = 1
+                next
+              }
+              found { print }
+            ' CHANGELOG.md
+            echo 'RELEASE_NOTES_EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Publish to npm
+        run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body: ${{ steps.notes.outputs.body }}
