@@ -2,15 +2,51 @@
   "name": "vue-summon",
   "version": "0.0.0",
   "description": "Imperatively render Vue components from anywhere — dialogs, toasts, modals, without cluttering your templates.",
-  "keywords": [],
+  "keywords": [
+    "dialog",
+    "imperative",
+    "modal",
+    "summon",
+    "toast",
+    "vue"
+  ],
   "license": "MIT",
   "author": "litingyes",
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "check": "vp check",
+    "test": "vp test"
+  },
+  "dependencies": {
+    "vue-component-type-helpers": "^3.3.8"
+  },
   "devDependencies": {
+    "@vitest/browser-preview": "^4.1.10",
     "bumpp": "^12.1.1",
     "changelogen": "^0.6.2",
+    "tsdown": "^0.22.14",
     "typescript": "^7.0.2",
-    "vite-plus": "^0.2.6"
+    "vite-plus": "^0.2.6",
+    "vitest": "^4.1.10",
+    "vitest-browser-vue": "^2.1.0"
   },
   "peerDependencies": {
     "vue": "3"
