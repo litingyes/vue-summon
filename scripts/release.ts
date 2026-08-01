@@ -1,5 +1,6 @@
 #!/usr/bin/env tsx
 import { execSync, spawnSync } from 'node:child_process'
+import { readFileSync, writeFileSync } from 'node:fs'
 
 import { versionBump } from 'bumpp'
 
@@ -37,6 +38,11 @@ async function main(): Promise<void> {
     execute: async (operation) => {
       const version = operation.state.newVersion
       run('pnpm', ['exec', 'changelogen', '--output', 'CHANGELOG.md', '-r', version])
+
+      const date = new Date().toLocaleDateString('en-CA')
+      const changelog = readFileSync('CHANGELOG.md', 'utf-8')
+      const headingPattern = new RegExp(`^## v${version.replace(/\./g, '\\.')}$`, 'm')
+      writeFileSync('CHANGELOG.md', changelog.replace(headingPattern, `## v${version} (${date})`))
     },
   })
 }

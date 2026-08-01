@@ -93,6 +93,7 @@ export default defineConfig({
           { text: 'Guide', link: '/guide/getting-started', activeMatch: '/guide/' },
           { text: 'API', link: '/api/', activeMatch: '/api/' },
           { text: 'Examples', link: '/examples/', activeMatch: '/examples/' },
+          { text: 'Changelog', link: '/changelog/', activeMatch: '/changelog/' },
         ],
         sidebar: {
           '/guide/': guideSidebarEn,
@@ -118,6 +119,7 @@ export default defineConfig({
           { text: '指南', link: '/zh/guide/getting-started', activeMatch: '/zh/guide/' },
           { text: 'API', link: '/zh/api/', activeMatch: '/zh/api/' },
           { text: '示例', link: '/zh/examples/', activeMatch: '/zh/examples/' },
+          { text: '更新日志', link: '/zh/changelog/', activeMatch: '/zh/changelog/' },
         ],
         sidebar: {
           '/zh/guide/': guideSidebarZh,
