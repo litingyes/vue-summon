@@ -36,6 +36,27 @@ const confirmed = await summon(ConfirmDialog, { title: '确定吗？' })
 const { resolve, dismiss, props } = useSummoned<boolean>()
 ```
 
+### `useSummon(options?)`
+
+在**宿主外部**使用的组合式函数，用于创建与当前 effect scope 生命周期绑定的实例：当 scope 被销毁（如组件卸载、Pinia store action scope 停止）时，会自动关闭这些实例。
+
+```ts
+const summon = useSummon() // 与顶层 summon() 同签名
+
+async function onDelete() {
+  const confirmed = await summon(ConfirmDialog, { title: '确定删除吗？' })
+  if (confirmed) {
+    /* ... */
+  }
+}
+```
+
+| 参数      | 类型                          | 说明                              |
+| --------- | ----------------------------- | --------------------------------- |
+| `options` | `{ manager?: SummonManager }` | 可选，默认使用 `defaultManager`。 |
+
+必须在活跃的 effect scope 中调用才会自动清理；否则退化为普通 `summon()` 并输出警告。
+
 ## 组件
 
 ### `<SummonHost />`

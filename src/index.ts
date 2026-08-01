@@ -1,7 +1,7 @@
 import type { Component } from 'vue'
 import type { ComponentProps } from 'vue-component-type-helpers'
 
-import { useSummoned, summonContextKey } from './context'
+import { summonContextKey, useSummoned } from './context'
 import { SummonHost, type SummonHostProps } from './host'
 import {
   createSummonManager,
@@ -9,6 +9,7 @@ import {
   type SummonInstance,
   type SummonManager,
 } from './manager'
+import { useSummon, type UseSummonOptions } from './scope'
 import type { SummonController, SummonOptions, SummonPromise } from './types'
 import { SummonDismissedError } from './types'
 
@@ -17,6 +18,7 @@ export {
   defaultManager,
   SummonHost,
   useSummoned,
+  useSummon,
   summonContextKey,
   SummonDismissedError,
 }
@@ -27,6 +29,7 @@ export type {
   SummonManager,
   SummonOptions,
   SummonPromise,
+  UseSummonOptions,
 }
 
 export function summon<C extends Component, R = unknown>(

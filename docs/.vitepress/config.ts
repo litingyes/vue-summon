@@ -16,6 +16,7 @@ const guideSidebarEn: DefaultTheme.SidebarItem[] = [
     items: [
       { text: 'Summoning Components', link: '/guide/summon' },
       { text: 'The Controller', link: '/guide/controller' },
+      { text: 'Scoped Summoning', link: '/guide/scoped-summon' },
       { text: 'Keys & Dismissal', link: '/guide/key-and-dismiss' },
       { text: 'Custom Managers', link: '/guide/custom-manager' },
     ],
@@ -43,6 +44,7 @@ const guideSidebarZh: DefaultTheme.SidebarItem[] = [
     items: [
       { text: '召唤组件', link: '/zh/guide/summon' },
       { text: '控制器', link: '/zh/guide/controller' },
+      { text: '作用域召唤', link: '/zh/guide/scoped-summon' },
       { text: 'Key 与关闭', link: '/zh/guide/key-and-dismiss' },
       { text: '自定义管理器', link: '/zh/guide/custom-manager' },
     ],

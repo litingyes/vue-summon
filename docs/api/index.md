@@ -36,6 +36,27 @@ Composable used **inside** a summoned component to access its [`SummonController
 const { resolve, dismiss, props } = useSummoned<boolean>()
 ```
 
+### `useSummon(options?)`
+
+Composable used **outside** the host to spawn instances that are automatically dismissed when the calling effect scope is disposed (for example, when a component unmounts or a Pinia store action scope is stopped).
+
+```ts
+const summon = useSummon() // same signature as the top-level summon()
+
+async function onDelete() {
+  const confirmed = await summon(ConfirmDialog, { title: 'Delete?' })
+  if (confirmed) {
+    /* ... */
+  }
+}
+```
+
+| Parameter | Type                          | Description                             |
+| --------- | ----------------------------- | --------------------------------------- |
+| `options` | `{ manager?: SummonManager }` | Optional. Defaults to `defaultManager`. |
+
+It must be called inside an active effect scope to enable automatic cleanup. Outside a scope, it falls back to plain `summon()` with a warning.
+
 ## Components
 
 ### `<SummonHost />`
