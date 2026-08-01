@@ -1,0 +1,59 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - release
+  pull_request:
+
+jobs:
+  test:
+    name: Run tests with coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install chromium
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Summarize coverage
+        if: always()
+        run: |
+          echo '## Test coverage' >> "$GITHUB_STEP_SUMMARY"
+          node -e '
+            const fs = require("fs");
+            const path = "coverage/coverage-summary.json";
+            if (!fs.existsSync(path)) { process.exit(0); }
+            const data = JSON.parse(fs.readFileSync(path, "utf8"));
+            const total = data.total;
+            const fmt = (k) => `${total[k].pct}% (${total[k].covered}/${total[k].total})`;
+            console.log(`| Metric | Coverage |`);
+            console.log(`| --- | --- |`);
+            console.log(`| Lines | ${fmt("lines")} |`);
+            console.log(`| Functions | ${fmt("functions")} |`);
+            console.log(`| Branches | ${fmt("branches")} |`);
+            console.log(`| Statements | ${fmt("statements")} |`);
+          ' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/

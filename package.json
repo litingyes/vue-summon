@@ -34,7 +34,7 @@
     "dev": "vp pack --watch",
     "check": "vp check",
     "typecheck": "tsc --noEmit",
-    "test": "vp test",
+    "test": "vp test run --coverage",
     "release": "tsx scripts/release.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
@@ -46,6 +46,7 @@
   "devDependencies": {
     "@types/node": "^24.13.3",
     "@vitest/browser-playwright": "^4.1.10",
+    "@vitest/coverage-v8": "4.1.10",
     "bumpp": "^12.1.1",
     "changelogen": "^0.6.2",
     "playwright": "^1.62.1",

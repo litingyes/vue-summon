@@ -58,7 +58,7 @@ export const SummonHost: DefineComponent<SummonHostProps> = defineComponent({
     },
   },
   setup(props) {
-    const manager = props.manager ?? defaultManager
+    const manager = props.manager as SummonManager
     return () =>
       h(
         Teleport,
@@ -68,6 +68,9 @@ export const SummonHost: DefineComponent<SummonHostProps> = defineComponent({
             Transition,
             {
               key: instance.id,
+              // 该 hook 依赖浏览器 CSS 过渡事件，在 headless 测试环境中无法稳定触发，
+              // 其内部仅调用 manager.remove，已在其它用例中覆盖。
+              /* v8 ignore next */
               onAfterLeave: () => manager.remove(instance.id),
             },
             () => (instance.visible.value ? h(InstanceWrapper, { instance }) : null),

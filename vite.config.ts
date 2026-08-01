@@ -42,10 +42,22 @@ const config: UserConfig = defineConfig({
     },
   },
   test: {
+    coverage: {
+      provider: 'v8',
+      include: ['src/**'],
+      reporter: ['text', 'html', 'json-summary'],
+      thresholds: {
+        lines: 100,
+        functions: 100,
+        branches: 100,
+        statements: 100,
+      },
+    },
     browser: {
       provider: playwright(),
       enabled: true,
       headless: true,
+      screenshotFailures: false,
       instances: [{ browser: 'chromium' }],
     },
   },
