@@ -1,7 +1,7 @@
 import { preview } from '@vitest/browser-preview'
-import { defineConfig } from 'vite-plus'
+import { defineConfig, type UserConfig } from 'vite-plus'
 
-export default defineConfig({
+const config: UserConfig = defineConfig({
   lint: {
     options: {
       typeAware: true,
@@ -30,6 +30,16 @@ export default defineConfig({
     __VUE_PROD_DEVTOOLS__: 'false',
     __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false',
   },
+  pack: {
+    entry: ['src/index.ts'],
+    format: ['esm'],
+    platform: 'neutral',
+    dts: true,
+    sourcemap: true,
+    deps: {
+      neverBundle: ['vue'],
+    },
+  },
   test: {
     browser: {
       provider: preview(),
@@ -41,3 +51,5 @@ export default defineConfig({
     '*': 'vp check --fix',
   },
 })
+
+export default config

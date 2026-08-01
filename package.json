@@ -30,9 +30,10 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsdown",
-    "dev": "tsdown --watch",
+    "build": "vp pack",
+    "dev": "vp pack --watch",
     "check": "vp check",
+    "typecheck": "tsc --noEmit",
     "test": "vp test"
   },
   "dependencies": {
@@ -42,7 +43,6 @@
     "@vitest/browser-preview": "^4.1.10",
     "bumpp": "^12.1.1",
     "changelogen": "^0.6.2",
-    "tsdown": "^0.22.14",
     "typescript": "^7.0.2",
     "vite-plus": "^0.2.6",
     "vitest": "^4.1.10",
