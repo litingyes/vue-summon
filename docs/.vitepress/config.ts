@@ -8,6 +8,7 @@ const guideSidebarEn: DefaultTheme.SidebarItem[] = [
     items: [
       { text: 'Why Vue Summon', link: '/guide/why-vue-summon' },
       { text: 'Getting Started', link: '/guide/getting-started' },
+      { text: 'Agent Skill', link: '/guide/agent-skill' },
     ],
   },
   {
@@ -34,6 +35,7 @@ const guideSidebarZh: DefaultTheme.SidebarItem[] = [
     items: [
       { text: '为什么需要 Vue Summon', link: '/zh/guide/why-vue-summon' },
       { text: '快速上手', link: '/zh/guide/getting-started' },
+      { text: 'AI Agent Skill', link: '/zh/guide/agent-skill' },
     ],
   },
   {
