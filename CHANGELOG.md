@@ -1,3 +1,24 @@
+## v0.2.0 (2026-08-02)
+
+[compare changes](https://github.com/litingyes/vue-summon/compare/v0.1.0...v0.2.0)
+
+### 🚀 Enhancements
+
+- **skill:** Add agent skill for AI coding assistants integration ([f3e95c2](https://github.com/litingyes/vue-summon/commit/f3e95c2))
+- Add AGENTS.md and CLAUDE.md for AI coding assistants ([3c0ff33](https://github.com/litingyes/vue-summon/commit/3c0ff33))
+- **docs:** Add interactive changelog page with i18n support ([5bf4d75](https://github.com/litingyes/vue-summon/commit/5bf4d75))
+- **scope:** Add useSummon composable with lifecycle cleanup ([313c6f5](https://github.com/litingyes/vue-summon/commit/313c6f5))
+- **host:** Support transition prop on SummonHost ([1c31646](https://github.com/litingyes/vue-summon/commit/1c31646))
+
+### 📖 Documentation
+
+- **readme:** Add Simplified Chinese translation ([8c2b835](https://github.com/litingyes/vue-summon/commit/8c2b835))
+- **readme:** Update image and guide links to absolute GitHub URLs ([9818ce8](https://github.com/litingyes/vue-summon/commit/9818ce8))
+
+### ❤️ Contributors
+
+- Litingyes ([@litingyes](https://github.com/litingyes))
+
 ## v0.1.0
 
 ### 🚀 Enhancements

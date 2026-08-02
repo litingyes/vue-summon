@@ -1,6 +1,6 @@
 {
   "name": "vue-summon",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Imperatively render Vue components from anywhere — dialogs, toasts, modals, without cluttering your templates.",
   "keywords": [
     "dialog",
