@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./docs/public/logo.svg" width="120" alt="Vue Summon logo" />
+  <img src="https://raw.githubusercontent.com/litingyes/vue-summon/release/docs/public/logo.svg" width="120" alt="Vue Summon logo" />
   <h1>Vue Summon</h1>
   <p>从任何地方命令式地渲染 Vue 组件——对话框、toast、弹窗，无需让模板变得杂乱。</p>
   <p>
@@ -8,7 +8,7 @@
   </p>
 </div>
 
-[English](./README.md) | **简体中文**
+[English](https://github.com/litingyes/vue-summon/blob/release/README.md) | **简体中文**
 
 ## 特性
 
@@ -103,22 +103,22 @@ try {
 npx skills add litingyes/vue-summon
 ```
 
-查看 [Agent Skill 指南](./docs/guide/agent-skill.md) 了解可用选项和详情。
+查看 [Agent Skill 指南](https://github.com/litingyes/vue-summon/blob/release/docs/guide/agent-skill.md) 了解可用选项和详情。
 
 ## 文档
 
-完整文档位于 [`./docs`](./docs)（VitePress，英文 + 简体中文）：
+完整文档位于 [`./docs`](https://github.com/litingyes/vue-summon/tree/release/docs)（VitePress，英文 + 简体中文）：
 
 ```bash
 pnpm docs:dev
 ```
 
-- [入门](./docs/zh/guide/getting-started.md)
-- [召唤组件](./docs/zh/guide/summon.md)
-- [控制器](./docs/zh/guide/controller.md)
-- [Key 与关闭](./docs/zh/guide/key-and-dismiss.md)
-- [自定义管理器](./docs/zh/guide/custom-manager.md)
-- [API 参考](./docs/zh/api/index.md)
+- [入门](https://github.com/litingyes/vue-summon/blob/release/docs/zh/guide/getting-started.md)
+- [召唤组件](https://github.com/litingyes/vue-summon/blob/release/docs/zh/guide/summon.md)
+- [控制器](https://github.com/litingyes/vue-summon/blob/release/docs/zh/guide/controller.md)
+- [Key 与关闭](https://github.com/litingyes/vue-summon/blob/release/docs/zh/guide/key-and-dismiss.md)
+- [自定义管理器](https://github.com/litingyes/vue-summon/blob/release/docs/zh/guide/custom-manager.md)
+- [API 参考](https://github.com/litingyes/vue-summon/blob/release/docs/zh/api/index.md)
 
 ## 许可证
 

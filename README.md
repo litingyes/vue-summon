@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./docs/public/logo.svg" width="120" alt="Vue Summon logo" />
+  <img src="https://raw.githubusercontent.com/litingyes/vue-summon/release/docs/public/logo.svg" width="120" alt="Vue Summon logo" />
   <h1>Vue Summon</h1>
   <p>Imperatively render Vue components from anywhere — dialogs, toasts, modals, without cluttering your templates.</p>
   <p>
@@ -8,7 +8,7 @@
   </p>
 </div>
 
-**English** | [简体中文](./README.zh-CN.md)
+**English** | [简体中文](https://github.com/litingyes/vue-summon/blob/release/README.zh-CN.md)
 
 ## Features
 
@@ -103,22 +103,22 @@ Install it with the [skills CLI](https://github.com/vercel-labs/skills):
 npx skills add litingyes/vue-summon
 ```
 
-See the [Agent Skill guide](./docs/guide/agent-skill.md) for options and details.
+See the [Agent Skill guide](https://github.com/litingyes/vue-summon/blob/release/docs/guide/agent-skill.md) for options and details.
 
 ## Documentation
 
-Full documentation lives in [`./docs`](./docs) (VitePress, English + 简体中文):
+Full documentation lives in [`./docs`](https://github.com/litingyes/vue-summon/tree/release/docs) (VitePress, English + 简体中文):
 
 ```bash
 pnpm docs:dev
 ```
 
-- [Getting Started](./docs/guide/getting-started.md)
-- [Summoning Components](./docs/guide/summon.md)
-- [The Controller](./docs/guide/controller.md)
-- [Keys & Dismissal](./docs/guide/key-and-dismiss.md)
-- [Custom Managers](./docs/guide/custom-manager.md)
-- [API Reference](./docs/api/index.md)
+- [Getting Started](https://github.com/litingyes/vue-summon/blob/release/docs/guide/getting-started.md)
+- [Summoning Components](https://github.com/litingyes/vue-summon/blob/release/docs/guide/summon.md)
+- [The Controller](https://github.com/litingyes/vue-summon/blob/release/docs/guide/controller.md)
+- [Keys & Dismissal](https://github.com/litingyes/vue-summon/blob/release/docs/guide/key-and-dismiss.md)
+- [Custom Managers](https://github.com/litingyes/vue-summon/blob/release/docs/guide/custom-manager.md)
+- [API Reference](https://github.com/litingyes/vue-summon/blob/release/docs/api/index.md)
 
 ## License
 

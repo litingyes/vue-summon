@@ -10,8 +10,14 @@
     "toast",
     "vue"
   ],
+  "homepage": "https://vue-summon.vercel.app",
+  "bugs": "https://github.com/litingyes/vue-summon/issues",
   "license": "MIT",
-  "author": "litingyes",
+  "author": "litingyes <luz.liting@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/litingyes/vue-summon.git"
+  },
   "files": [
     "dist"
   ],
